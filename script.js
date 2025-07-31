@@ -1,7 +1,17 @@
 function nextPage(pageNumber) {
+    console.log('nextPage called with pageNumber:', pageNumber);
+    
     // Professional page transition with smooth animation
     const currentPage = document.querySelector('.page.active');
     const nextPageElement = document.getElementById('page' + pageNumber);
+    
+    console.log('currentPage:', currentPage);
+    console.log('nextPageElement:', nextPageElement);
+    
+    if (!nextPageElement) {
+        console.error('Page not found: page' + pageNumber);
+        return;
+    }
     
     if (currentPage) {
         currentPage.style.transform = 'translateX(-100%)';
@@ -73,6 +83,16 @@ function createConfetti() {
 
 // Professional loading and initialization
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('script.js loaded and DOM ready');
+    console.log('Available pages:', document.querySelectorAll('.page').length);
+    
+    // Debug: Log all page IDs
+    const allPages = document.querySelectorAll('.page');
+    console.log('Page IDs found:');
+    allPages.forEach((page, index) => {
+        console.log(`${index + 1}: ${page.id}`);
+    });
+    
     // Handle loading screen
     const loadingScreen = document.getElementById('loading-screen');
     
@@ -121,17 +141,18 @@ if ('scrollBehavior' in document.documentElement.style) {
     document.documentElement.style.scrollBehavior = 'smooth';
 }
 
-// Professional Netflix-style particles
-particlesJS('particles-js',
-  {
-    "particles": {
-      "number": {
-        "value": 50,
-        "density": {
-          "enable": true,
-          "value_area": 1000
-        }
-      },
+// Professional Netflix-style particles - with error handling
+if (typeof particlesJS !== 'undefined') {
+    particlesJS('particles-js',
+      {
+        "particles": {
+          "number": {
+            "value": 50,
+            "density": {
+              "enable": true,
+              "value_area": 1000
+            }
+          },
       "color": {
         "value": ["#e50914", "#f5c842", "#ffffff"]
       },
@@ -203,6 +224,9 @@ particlesJS('particles-js',
     "retina_detect": true
   }
 );
+} else {
+    console.warn('particlesJS not loaded, continuing without particles');
+}
 
 // Professional floating hearts with better performance
 function createFloatingHearts() {
