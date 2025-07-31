@@ -1,12 +1,7 @@
 function nextPage(pageNumber) {
-    console.log('nextPage called with pageNumber:', pageNumber);
-    
     // Professional page transition with smooth animation
     const currentPage = document.querySelector('.page.active');
     const nextPageElement = document.getElementById('page' + pageNumber);
-    
-    console.log('currentPage:', currentPage);
-    console.log('nextPageElement:', nextPageElement);
     
     if (!nextPageElement) {
         console.error('Page not found: page' + pageNumber);
@@ -83,16 +78,6 @@ function createConfetti() {
 
 // Professional loading and initialization
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('script.js loaded and DOM ready');
-    console.log('Available pages:', document.querySelectorAll('.page').length);
-    
-    // Debug: Log all page IDs
-    const allPages = document.querySelectorAll('.page');
-    console.log('Page IDs found:');
-    allPages.forEach((page, index) => {
-        console.log(`${index + 1}: ${page.id}`);
-    });
-    
     // Handle loading screen
     const loadingScreen = document.getElementById('loading-screen');
     
