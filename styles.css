@@ -67,9 +67,9 @@ body {
 }
 
 .page.active {
-    display: flex;
-    opacity: 1;
-    transform: translateX(0);
+    display: flex !important;
+    opacity: 1 !important;
+    transform: translateX(0) !important;
 }
 
 /* Professional Image Styling */

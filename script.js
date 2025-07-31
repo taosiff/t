@@ -1,10 +1,18 @@
 function nextPage(pageNumber) {
+    console.log('=== nextPage called ===');
+    console.log('Requested page:', pageNumber);
+    console.log('Total pages found:', document.querySelectorAll('.page').length);
+    
     // Professional page transition with smooth animation
     const currentPage = document.querySelector('.page.active');
     const nextPageElement = document.getElementById('page' + pageNumber);
     
+    console.log('Current active page:', currentPage ? currentPage.id : 'None');
+    console.log('Target page element:', nextPageElement ? nextPageElement.id : 'NOT FOUND');
+    
     if (!nextPageElement) {
-        console.error('Page not found: page' + pageNumber);
+        console.error('ERROR: Page not found: page' + pageNumber);
+        alert('Debug: Page ' + pageNumber + ' not found!');
         return;
     }
     

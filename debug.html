@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug - TASFEEEEEEEEE</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            background: #141414; 
+            color: white; 
+            padding: 20px; 
+        }
+        .page { 
+            display: none; 
+            padding: 20px; 
+            border: 2px solid #e50914; 
+            margin: 10px 0; 
+        }
+        .page.active { 
+            display: block; 
+        }
+        button { 
+            padding: 10px 20px; 
+            background: #e50914; 
+            color: white; 
+            border: none; 
+            margin: 5px; 
+            cursor: pointer; 
+        }
+        .debug { 
+            background: #333; 
+            padding: 10px; 
+            margin: 10px 0; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Debug Page for TASFEEEEEEEEE 💖</h1>
+    
+    <div class="debug">
+        <h3>Debug Info:</h3>
+        <div id="debug-info">Loading...</div>
+    </div>
+
+    <div id="page1" class="page active">
+        <h2>Page 1: Welcome</h2>
+        <p>Hi TASFEEEEEEEEE! 💖</p>
+        <button onclick="nextPage(2)">Go to Page 2</button>
+    </div>
+
+    <div id="page2" class="page">
+        <h2>Page 2: Moon</h2>
+        <p>Here's the moon...</p>
+        <button onclick="nextPage(3)">Go to Page 3</button>
+    </div>
+
+    <div id="page3" class="page">
+        <h2>Page 3: Her Photos</h2>
+        <p>Beautiful photos...</p>
+        <button onclick="nextPage(4)">Go to Page 4</button>
+    </div>
+
+    <div id="page4" class="page">
+        <h2>Page 4: Heavenly View</h2>
+        <p>You are such a heavenly view... ✨✨✨</p>
+        <button onclick="nextPage(5)">Go to Page 5</button>
+    </div>
+
+    <div id="page5" class="page">
+        <h2>Page 5: Catt</h2>
+        <p>Cause I'm Catt 🐱</p>
+        <button onclick="nextPage(6)">Go to Page 6</button>
+    </div>
+
+    <div id="page6" class="page">
+        <h2>Page 6: Imagine Us</h2>
+        <p>Just imagine us fr...</p>
+        <button onclick="nextPage(7)">Go to Page 7</button>
+    </div>
+
+    <div id="page7" class="page">
+        <h2>Page 7: Miles Away</h2>
+        <p>Now you are thinking we are miles away right? 😔</p>
+        <button onclick="nextPage(8)">Go to Page 8</button>
+    </div>
+
+    <div id="page8" class="page">
+        <h2>Page 8: Don't Worry</h2>
+        <p>But don't worry ✨</p>
+        <button onclick="nextPage(9)">Go to Page 9</button>
+    </div>
+
+    <div id="page9" class="page">
+        <h2>Page 9: Promise</h2>
+        <p>We'll be together soon I know it. Where there's a will, there's a way. And my will? It's you. Always has been.</p>
+        <button onclick="nextPage(10)">Go to Page 10</button>
+    </div>
+
+    <div id="page10" class="page">
+        <h2>Page 10: Question</h2>
+        <p>Finally Can I say that I have the prettiest gurl? 💕</p>
+        <button onclick="nextPage(11)">Yes 💖</button>
+    </div>
+
+    <div id="page11" class="page">
+        <h2>Page 11: Perfect!</h2>
+        <p>Perfect! 🎉</p>
+        <button onclick="nextPage(12)">Continue to final page...</button>
+    </div>
+
+    <div id="page12" class="page">
+        <h2>Page 12: Thank You</h2>
+        <p>Thank you for choosing me 💝</p>
+        <button onclick="nextPage(1)">Start Over</button>
+    </div>
+
+    <script>
+        function nextPage(pageNumber) {
+            console.log('nextPage called with:', pageNumber);
+            
+            const currentPage = document.querySelector('.page.active');
+            const nextPageElement = document.getElementById('page' + pageNumber);
+            
+            console.log('currentPage:', currentPage);
+            console.log('nextPageElement:', nextPageElement);
+            
+            if (!nextPageElement) {
+                console.error('Page not found: page' + pageNumber);
+                document.getElementById('debug-info').innerHTML += '<br>ERROR: Page not found: page' + pageNumber;
+                return;
+            }
+            
+            if (currentPage) {
+                currentPage.classList.remove('active');
+            }
+            
+            nextPageElement.classList.add('active');
+            
+            updateDebugInfo();
+        }
+
+        function updateDebugInfo() {
+            const allPages = document.querySelectorAll('.page');
+            const activePage = document.querySelector('.page.active');
+            
+            let info = `
+                <strong>Total Pages:</strong> ${allPages.length}<br>
+                <strong>Active Page:</strong> ${activePage ? activePage.id : 'None'}<br>
+                <strong>All Page IDs:</strong><br>
+            `;
+            
+            allPages.forEach((page, index) => {
+                const isActive = page.classList.contains('active') ? ' (ACTIVE)' : '';
+                info += `${index + 1}. ${page.id}${isActive}<br>`;
+            });
+            
+            document.getElementById('debug-info').innerHTML = info;
+        }
+
+        // Initialize debug info
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Debug page loaded');
+            updateDebugInfo();
+        });
+    </script>
+</body>
+</html>

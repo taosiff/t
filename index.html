@@ -143,8 +143,16 @@
         <div class="question-container">
             <p class="big-question">Finally Can I say that I have the prettiest gurl? 💕</p>
             <div class="single-choice">
-                <button class="yes-only-btn shine-effect" onclick="nextPage(12)">Yes 💖</button>
+                <button class="yes-only-btn shine-effect" onclick="nextPage(11)">Yes 💖</button>
             </div>
+        </div>
+    </div>
+
+    <!-- Missing Page 11 - Let's add it -->
+    <div id="page11" class="page">
+        <div class="question-container">
+            <p class="big-question">Perfect! 🎉</p>
+            <button class="neon-button" onclick="nextPage(12)">Continue to final page...</button>
         </div>
     </div>
 
@@ -159,6 +167,41 @@
         </div>
     </div>
 
+    <!-- Debug Panel (hidden by default) -->
+    <div id="debug-panel" style="position: fixed; bottom: 10px; right: 10px; background: rgba(0,0,0,0.8); color: white; padding: 10px; font-size: 12px; border-radius: 5px; max-width: 300px; z-index: 9999;">
+        <div style="cursor: pointer; margin-bottom: 5px;" onclick="this.parentElement.style.display='none'">❌ Close Debug</div>
+        <div id="debug-content">Loading...</div>
+    </div>
+
     <script src="script.js"></script>
+    
+    <!-- Debug initialization -->
+    <script>
+        function updateDebugPanel() {
+            const debugContent = document.getElementById('debug-content');
+            if (!debugContent) return;
+            
+            const allPages = document.querySelectorAll('.page');
+            const activePage = document.querySelector('.page.active');
+            
+            let content = `<strong>Pages: ${allPages.length}</strong><br>`;
+            content += `<strong>Active: ${activePage ? activePage.id : 'None'}</strong><br><br>`;
+            
+            allPages.forEach((page, index) => {
+                const isActive = page.classList.contains('active');
+                content += `${index + 1}. ${page.id} ${isActive ? '✅' : '⭕'}<br>`;
+            });
+            
+            debugContent.innerHTML = content;
+        }
+        
+        // Show debug panel by default for testing
+        document.addEventListener('DOMContentLoaded', function() {
+            updateDebugPanel();
+            
+            // Update debug panel every 2 seconds
+            setInterval(updateDebugPanel, 2000);
+        });
+    </script>
 </body>
 </html> 
