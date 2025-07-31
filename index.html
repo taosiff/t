@@ -86,8 +86,13 @@
 
     <!-- Scrollable Photo Gallery -->
     <div id="page6" class="page">
-        <div class="scrollable-gallery-container">
+        <!-- Fixed Header -->
+        <div class="gallery-header">
             <h2 class="gallery-title">just imagine us fr</h2>
+        </div>
+        
+        <!-- Scrollable Content -->
+        <div class="gallery-content">
             <div class="scrollable-photo-grid">
                 <img src="images/moon-together.jpg" alt="Photo" class="gallery-photo">
                 <img src="images/morning-coffee.jpg" alt="Photo" class="gallery-photo">
@@ -110,9 +115,11 @@
                 <img src="images/12.JPG" alt="Photo" class="gallery-photo">
                 <img src="images/13.JPG" alt="Photo" class="gallery-photo">
             </div>
-            <div class="gallery-button-container">
-                <button class="neon-button" onclick="nextPage(7)">Continue...</button>
-            </div>
+        </div>
+        
+        <!-- Fixed Footer Button -->
+        <div class="gallery-footer">
+            <button class="neon-button" onclick="nextPage(7)">Continue...</button>
         </div>
     </div>
 
