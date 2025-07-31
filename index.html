@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You, TASFEEEEEEEEE ❤️</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <!-- Add particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+    <!-- Professional Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <div class="heart-logo">💖</div>
+            </div>
+            <div class="loading-text">Loading something special...</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="particles-js"></div>
+
+    <div id="page1" class="page active">
+        <div class="heart-bg"></div>
+        <h1 class="glow-text">Hi TASFEEEEEEEEE! 💖</h1>
+        <button class="neon-button" onclick="nextPage(2)">wanna see the moon?</button>
+    </div>
+
+    <div id="page2" class="page">
+        <img src="images/moon.jpg" alt="Moon" class="feature-image">
+        <button onclick="nextPage(3)">wanna see it through my eyes?</button>
+    </div>
+
+    <!-- All Her Photos Together -->
+    <div id="page3" class="page">
+        <div class="her-photos-container">
+            <div class="her-photos-grid">
+                <img src="images/her-photo.jpg" alt="Beautiful You" class="her-photo">
+                <img src="images/her-photo2.jpg" alt="Beautiful You" class="her-photo">
+                <img src="images/her-photo4-missing-you.jpg" alt="Beautiful You" class="her-photo">
+                <img src="images/her-photo3.JPG" alt="Beautiful You" class="her-photo">
+                <img src="images/her-photo5.jpg" alt="Beautiful You" class="her-photo">
+                <img src="images/her-photo6.jpg" alt="Beautiful You" class="her-photo">
+            </div>
+        </div>
+        <button class="neon-button" onclick="nextPage(4)">Continue...</button>
+    </div>
+
+    <!-- Heavenly View Page with Aesthetic Effect -->
+    <div id="page4" class="page">
+        <div class="aesthetic-container">
+            <div class="floating-particles"></div>
+            <p class="heavenly-text">You are such a heavenly view... 
+                <span class="sparkles">✨✨✨</span>
+            </p>
+            <img src="images/heavenly-view-photo.jpg" alt="Heavenly View" class="heavenly-photo floating">
+        </div>
+        <button class="neon-button" onclick="nextPage(5)">Why should you love me?</button>
+    </div>
+
+    <!-- Catt Page -->
+    <div id="page5" class="page">
+        <div class="batman-bg"></div>
+        <img src="images/IMG_0157.jpeg" alt="Catt" class="feature-image floating">
+        <p class="batman-text glitch" data-text="Cause I'm Catt 🐱">Cause I'm Catt 🐱</p>
+        <button class="neon-button" onclick="nextPage(6)">Just think about us...</button>
+    </div>
+
+    <!-- Scrollable Photo Gallery -->
+    <div id="page6" class="page">
+        <div class="scrollable-gallery-container">
+            <h2 class="gallery-title">just imagine us fr</h2>
+            <div class="scrollable-photo-grid">
+                <img src="images/moon-together.jpg" alt="Photo" class="gallery-photo">
+                <img src="images/morning-coffee.jpg" alt="Photo" class="gallery-photo">
+                <img src="images/cooking-together.jpg" alt="Photo" class="gallery-photo">
+                <img src="images/movie-night.jpg" alt="Photo" class="gallery-photo">
+                <img src="images/travel.jpg" alt="Photo" class="gallery-photo">
+                <img src="images/gaming.jpg" alt="Photo" class="gallery-photo">
+                <img src="images/night-ride.jpg" alt="Photo" class="gallery-photo">
+                <img src="images/1.jpg" alt="Photo" class="gallery-photo">
+                <img src="images/2.jpg" alt="Photo" class="gallery-photo">
+                <img src="images/3.jpg" alt="Photo" class="gallery-photo">
+                <img src="images/4.jpg" alt="Photo" class="gallery-photo">
+                <img src="images/5.jpg" alt="Photo" class="gallery-photo">
+                <img src="images/6.jpg" alt="Photo" class="gallery-photo">
+                <img src="images/7.jpg" alt="Photo" class="gallery-photo">
+                <img src="images/8.jpg" alt="Photo" class="gallery-photo">
+                <img src="images/9.jpg" alt="Photo" class="gallery-photo">
+                <img src="images/10.jpg" alt="Photo" class="gallery-photo">
+                <img src="images/11.jpg" alt="Photo" class="gallery-photo">
+                <img src="images/12.jpg" alt="Photo" class="gallery-photo">
+                <img src="images/13.jpg" alt="Photo" class="gallery-photo">
+            </div>
+        </div>
+        <button class="neon-button" onclick="nextPage(7)">Continue...</button>
+    </div>
+
+    <!-- Miles Away Worry Page -->
+    <div id="page7" class="page">
+        <img src="images/IMG_0133.jpeg" alt="Miles Away" class="feature-image floating">
+        <p class="fancy-text">Now you are thinking we are miles away right?
+            <span class="heart-pulse">😔</span>
+        </p>
+        <button class="neon-button" onclick="nextPage(8)">Continue...</button>
+    </div>
+
+    <!-- Don't Worry Page -->
+    <div id="page8" class="page">
+        <img src="images/received_610645687213562.jpeg" alt="Don't Worry" class="feature-image floating">
+        <p class="fancy-text">But don't worry
+            <span class="sparkles">✨</span>
+        </p>
+        <button class="neon-button" onclick="nextPage(9)">Continue...</button>
+    </div>
+
+    <!-- Long Distance Promise Page -->
+    <div id="page9" class="page">
+        <div class="long-distance-container">
+            <p class="highlight-promise">We'll be together soon I know it. Where there's a will, there's a way. And my will? It's you. Always has been.</p>
+        </div>
+        <button class="neon-button" onclick="nextPage(10)">soooooo</button>
+    </div>
+
+    <!-- Prettiest Girl Question Page -->
+    <div id="page10" class="page">
+        <div class="question-container">
+            <p class="big-question">Finally Can I say that I have the prettiest gurl? 💕</p>
+            <div class="single-choice">
+                <button class="yes-only-btn shine-effect" onclick="nextPage(12)">Yes 💖</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final Thank You Page -->
+    <div id="page12" class="page">
+        <div class="floating-hearts"></div>
+        <div class="thank-you-container">
+            <img src="images/thank-you-photo.jpg" alt="Thank You" class="thank-you-image floating">
+            <div class="thank-you-message">
+                <p class="thank-you-text">Thank you for choosing me 💝</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
